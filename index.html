@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To do List - n4b1lh</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="bg-gray-100">
+  <main class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-xl bg-white shadow-xl rounded-lg p-6">
+
+      <!-- Title -->
+      <header class="mb-6 text-center">
+        <h1 class="text-4xl font-bold text-blue-600 mb-1">To do List</h1>
+        <p class="text-sm text-gray-500">by n4b1lh</p>
+      </header>
+
+      <!-- Form Todo -->
+      <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div>
+          <label for="todo-input" class="block text-sm font-medium text-gray-700">Task</label>
+          <input type="text" id="todo-input"
+            class="mt-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            placeholder="Enter your task here" />
+        </div>
+
+        <div>
+          <label for="date-input" class="block text-sm font-medium text-gray-700">Date</label>
+          <input type="date" id="date-input"
+            class="mt-1 w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+        </div>
+
+        <div class="sm:col-span-2 text-right">
+          <button type="button"
+            class="mt-2 px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow"
+            onclick="addTask();">
+            Add Task
+          </button>
+        </div>
+      </form>
+
+      <!-- Filter & Delete All -->
+      <div class="flex flex-wrap gap-2 justify-between items-center mb-4">
+        <div class="flex gap-2">
+          <button onclick="setFilter('all')"
+            class="px-3 py-1 rounded bg-gray-400 hover:bg-gray-500 text-white text-sm">All</button>
+          <button onclick="setFilter('pending')"
+            class="px-3 py-1 rounded bg-yellow-500 hover:bg-yellow-600 text-white text-sm">Pending</button>
+          <button onclick="setFilter('completed')"
+            class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm">Completed</button>
+        </div>
+        <button onclick="removeAllTask()"
+          class="px-3 py-1 rounded bg-red-500 hover:bg-red-600 text-white text-sm">Delete All</button>
+      </div>
+
+      <!-- Task List -->
+      <section>
+        <header>
+          <h2 class="text-xl font-semibold mb-3 text-gray-700">Task List</h2>
+        </header>
+        <ul id="todo-list" class="space-y-2">
+          <p class="text-gray-500 text-center">No tasks available</p>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>
