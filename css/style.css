@@ -10,7 +10,7 @@ main {
 }
 
 form {
-  background-color: #f0f9ff; /* lebih soft dari aliceblue */
+  background-color: #f0f9ff;
   padding: 20px;
   border-radius: 10px;
   display: flex;
